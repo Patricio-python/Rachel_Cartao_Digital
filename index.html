@@ -60,6 +60,13 @@
         gap: 12px;
     }
 
+    #btnTrocar{
+     display: block;
+        font-size: 30px;
+        font-weight: bold;
+        font-family:'Tangerine', serif;
+    }
+
     .btn {
         display: block;
         padding: 12px;
@@ -101,13 +108,28 @@
 
 
     <div class="buttons">
-        <a class="btn" href="https://wa.me/559181476272" target="_blank">Raquel</a>
+        <a class="btn" id="btnWhats" href="https://wa.me/559181476272" target="_blank">Raquel</a>
         <a class="btn" href="https://wa.me/c/559188686763" target="_blank">Catalogo</a>
         <a class="btn" href="https://www.instagram.com/rachel_trajesfinos" target="_blank">Instagram</a>
         <a class="btn" href="https://maps.app.goo.gl/8xEXKDoF5YBJbnMg7" target="_blank">Localização</a>
+        <button id="btnTrocar">Trocar Contato</button>
     </div>
 
 </div>
-
+<script>
+    document.getElementById("btnTrocar").addEventListener("click", function () {
+    const botao = document.getElementById("btnWhats");
+    // Se o botão estiver com os dados de Raquel:
+    if (botao.textContent.trim() === "Raquel") {
+    botao.textContent = "Alexandre";
+    botao.href = "https://wa.me/559188686763";
+    } 
+    // Se estiver com os dados de Alexandre:
+    else {
+    botao.textContent = "Raquel";
+    botao.href = "https://wa.me/559181476272";
+    }
+    });
+</script>
 </body>
 </html>
